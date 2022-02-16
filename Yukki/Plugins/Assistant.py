@@ -119,3 +119,6 @@ async def check_ass(_, message: Message):
         return await message.reply_text(
             f"تم العثور على المساعد المحفوظ مسبقًا\n\nرقم مساعد {ass} "
         )
+
+
+# @wv2v2
