@@ -75,3 +75,6 @@ async def blacklisted_chats_func(_, message: Message):
         await message.reply_text("No الدردشات المدرجة في القائمة السوداء")
     else:
         await message.reply_text(text)
+
+
+# @wv2v2
