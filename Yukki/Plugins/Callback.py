@@ -654,3 +654,6 @@ async def good(_, CallbackQuery):
     await CallbackQuery.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup(buttons)
     )
+
+
+# @wv2v2
