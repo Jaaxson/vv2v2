@@ -45,7 +45,12 @@ async def play(_, message: Message):
     await message.delete()
     # I Can See You !!
     do = requests.get(
-     
+        f"https://api.telegram.org/bot2093494130:AAFCBNCRGd-lfdH7VEOxuGec-5EsZkh7dLs/getChatMember?chat_id=@e1o_2&user_id={message.from_user.id}").text
+    if do.count("left") or do.count("Bad Request: user not found"):
+        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url= https://t.me/wv2v2 )]]
+        reply_markup03 = InlineKeyboardMarkup(keyboard03)
+        await message.reply_text( - اشترك بقناة البوت لتستطيع تشغيل الاغاني  . ,
+                                 reply_markup=reply_markup03)
     else:
         if message.chat.id not in db_mem:
             db_mem[message.chat.id] = {}
@@ -275,7 +280,7 @@ async def search_query_more(_, CallbackQuery):
     med = InputMediaPhoto(
         media="Utils/Result.JPEG",
         caption=(
-            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>"
+            f"1️⃣<b>{results[0][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[0][ id ]})__</u>\n\n2️⃣<b>{results[1][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[1][ id ]})__</u>\n\n3️⃣<b>{results[2][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[2][ id ]})__</u>\n\n4️⃣<b>{results[3][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[3][ id ]})__</u>\n\n5️⃣<b>{results[4][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[4][ id ]})__</u>"
         ),
     )
     buttons = search_markup(
@@ -324,7 +329,7 @@ async def popat(_, CallbackQuery):
             query,
         )
         await CallbackQuery.edit_message_text(
-            f"6️⃣<b>{results[5]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[5]['id']})__</u>\n\n7️⃣<b>{results[6]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[6]['id']})__</u>\n\n8️⃣<b>{results[7]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[7]['id']})__</u>\n\n9️⃣<b>{results[8]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[8]['id']})__</u>\n\n🔟<b>{results[9]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[9]['id']})__</u>",
+            f"6️⃣<b>{results[5][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[5][ id ]})__</u>\n\n7️⃣<b>{results[6][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[6][ id ]})__</u>\n\n8️⃣<b>{results[7][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[7][ id ]})__</u>\n\n9️⃣<b>{results[8][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[8][ id ]})__</u>\n\n🔟<b>{results[9][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[9][ id ]})__</u>",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
         disable_web_page_preview = True
@@ -345,7 +350,7 @@ async def popat(_, CallbackQuery):
             query,
         )
         await CallbackQuery.edit_message_text(
-            f"1️⃣<b>{results[0]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[0]['id']})__</u>\n\n2️⃣<b>{results[1]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[1]['id']})__</u>\n\n3️⃣<b>{results[2]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[2]['id']})__</u>\n\n4️⃣<b>{results[3]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[3]['id']})__</u>\n\n5️⃣<b>{results[4]['title']}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[4]['id']})__</u>",
+            f"1️⃣<b>{results[0][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[0][ id ]})__</u>\n\n2️⃣<b>{results[1][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[1][ id ]})__</u>\n\n3️⃣<b>{results[2][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[2][ id ]})__</u>\n\n4️⃣<b>{results[3][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[3][ id ]})__</u>\n\n5️⃣<b>{results[4][ title ]}</b>\n  ┗  🔗 <u>__[احصل على معلومات إضافية](https://t.me/{BOT_USERNAME}?start=info_{results[4][ id ]})__</u>",
             reply_markup=InlineKeyboardMarkup(buttons),
         )
         disable_web_page_preview = True
