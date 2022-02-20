@@ -77,4 +77,4 @@ async def blacklisted_chats_func(_, message: Message):
         await message.reply_text(text)
 
 
-# @wv2v2
+# @J_X_S3
