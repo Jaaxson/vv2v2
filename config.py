@@ -11,15 +11,17 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 API_ID = int(getenv("API_ID", ""))
 API_HASH = getenv("API_HASH")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "10"))
+ASSISTANT_PREFIX = list(getenv("ASSISTANT_PREFIX", ".").split())
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
 OWNER_ID = list(map(int, getenv("OWNER_ID", "").split()))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO", "https://github.com/NotReallyShikhar/YukkiMusicBot"
+    "UPSTREAM_REPO", "https://github.com/Jaaxson/vv2v2.git"
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
