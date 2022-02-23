@@ -43,21 +43,11 @@ loop = asyncio.get_event_loop()
 @AssistantAdd
 async def play(_, message: Message):
     await message.delete()
-    # I Can See You !!
-    do = requests.get(
-       f"https://api.telegram.org/bot2093494130:AAFCBNCRGd-lfdH7VEOxuGec-5EsZkh7dLs/getChatMember?chat_id=@J_X_SI&user_id={message.from_user.id}").text
-    if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/J_X_S3')]]
-        reply_markup03 = InlineKeyboardMarkup(keyboard03)
-        await message.reply_text('- اشترك بقناة البوت لتستطيع تشغيل الاغاني  .',
-                                 reply_markup=reply_markup03)
-    else:
-        if message.chat.id not in db_mem:
-            db_mem[message.chat.id] = {}
-        if message.sender_chat:
-            return await message.reply_text(
-                "انت لست  مشرف في المجموعه!\nيجب انت تكون مشرف مع بعض الصلاحيات."
-            )
+    if message.chat.id not in db_mem:
+        db_mem[message.chat.id] = {}
+    if message.sender_chat:
+        return await message.reply_text(
+            "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
             )
         audio = (
             (message.reply_to_message.audio or message.reply_to_message.voice)
